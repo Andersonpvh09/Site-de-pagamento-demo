@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    .product { border: 1px solid #ddd; border-radius: 10px; padding: 20px; max-width: 400px; margin: 0 auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .button { padding: 10px 20px; font-size: 16px; border: none; background: #28a745; color: white; border-radius: 5px; cursor: pointer; }
+    .button:disabled { background: #aaa; cursor: not-allowed; }
+    #linkLiberado { margin-top: 20px; display: none; }
+  </style>
+</head>
+<body>
+  <h1>Produto Demonstrativo</h1>
+  <div class="product">
+    <p><strong>Curso de Instalação de Portas</strong></p>
+    <p>Aprenda tudo sobre instalação de portas em um curso completo!</p>
+    <p><strong>R$ 49,90</strong></p>
+    <button class="button" onclick="confirmarPagamento()">Pagar</button>
+
+    <div id="linkLiberado">
+      <p><strong>Pagamento confirmado!</strong></p>
+      <p><a href="https://exemplo.com/conteudo" target="_blank">Clique aqui para acessar o conteúdo</a></p>
+    </div>
+  </div>
+
+  <script>
+    function confirmarPagamento() {
+      const botao = document.querySelector('.button');
+      botao.disabled = true;
+      botao.textContent = 'Processando...';
+
+      setTimeout(() => {
+        botao.style.display = 'none';
+        document.getElementById('linkLiberado').style.display = 'block';
+      }, 2000);
+    }
+  </script>
+</body>
+</html># Site-de-pagamento-demo
